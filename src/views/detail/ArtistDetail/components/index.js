@@ -1,0 +1,5 @@
+export {default as SongsList} from './SongsList'
+export {default as ArtistAlbum} from './ArtistAlbum'
+export {default as ArtistMv} from './ArtistMv'
+export {default as ArtistDesc} from './ArtistDesc'
+export {default as SimiArtists} from './SimiArtists'
