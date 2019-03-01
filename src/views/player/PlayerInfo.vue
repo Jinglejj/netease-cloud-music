@@ -20,7 +20,7 @@
                     </div>
                 </el-col>
                 <el-col :sm="24" :md="14" :lg="12" class="hidden-xs-only">
-                    <div class="grid-content bg-purple-light"></div>
+                    <lyric :words="words"  style="height: 80%;margin-top:10%"></lyric>
                 </el-col>
             </el-row>
         </div>
@@ -28,10 +28,15 @@
 </template>
 
 <script>
-    import {getLocalStorage,setLocalStorage} from "@/utils/util";
-
+    import {getLocalStorage, setLocalStorage} from "@/utils/util";
+    import {getLyric} from "../../apis/api";
+    import Lyric from './Lyric';
+    import moment from 'moment'
     export default {
         name: "PlayerInfo",
+        components: {
+            Lyric
+        },
         props: {
             imgUrl: {
                 type: String
@@ -40,7 +45,7 @@
                 type: Boolean,
                 require: true
             },
-            id:{
+            id: {
                 require: true
             }
         },
@@ -49,28 +54,32 @@
                 show: false,
                 imgColor: 'blue',
                 surroundList: [],
+                words:new Map(),
             }
         },
         watch: {
             imgUrl(val) {
                 this.pauseSuuround();
+            },
+            id(val){
+                this.getLyric();
             }
         },
         methods: {
             getColor() {
-                if(getLocalStorage(this.id)){
+                if (getLocalStorage(this.id)) {
                     this.imgColor = getLocalStorage(this.id);
-                }else{
+                } else {
                     const URL = `http://${location.host}/img${this.imgUrl.slice('https://p1.music.126.net'.length)}`;
                     RGBaster.colors(URL, {
                         paletteSize: 1,
                         success: (payload) => {
-                            setLocalStorage(this.id,payload.secondary);
+                            setLocalStorage(this.id, payload.secondary);
                             this.imgColor = payload.secondary;
                         }
                     });
                 }
-                if(this.isPlay){
+                if (this.isPlay) {
                     this.playSuuround();
                 }
             },
@@ -100,6 +109,29 @@
                         }, (index + 1) * 1000);
                     })
                 })
+            },
+            getLyric(){
+                getLyric(this.id).then(res => {
+                    console.log(res);
+                    const {lrc} =res;
+                    const arr=lrc.lyric.split('\n');
+                    const map = new Map();
+                    arr.forEach(item => {
+                        const key = this.formDate(item.split(']')[0]);
+                        const value = item.split(']')[1];
+                        map.set(key, value);
+                    });
+                    this.words = map;
+                }).catch(err => {
+                    console.log(err);
+                });
+            },
+            formDate(date) {
+                const time = moment(date, 'mm:s:SSS');
+                const second = time.second();
+                const minute = time.minute();
+                const millisecond = time.millisecond();
+                return (minute * 60 * 1000) + second * 1000 + millisecond;
             }
         },
         mounted() {
@@ -117,9 +149,7 @@
             }, {
                 immediate: true
             });
-        },
-        activated(){
-            console.log(214);
+            this.getLyric();
         }
     }
 </script>
@@ -161,6 +191,7 @@
         .image-container .image {
             width: 65%;
         }
+
         .image-container .surround {
             width: 99%;
             height: 0;
@@ -192,6 +223,7 @@
         animation-fill-mode: backwards;
         z-index: 12;
     }
+
     .surround {
         width: 70%;
         height: 0;
@@ -272,6 +304,7 @@
             opacity: 0;
         }
     }
+
     @keyframes round2 {
         from {
             opacity: .8;

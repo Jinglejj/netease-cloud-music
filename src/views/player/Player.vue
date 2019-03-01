@@ -71,7 +71,7 @@
 
 <script>
     import Aplayer from 'yujinjiang-vue-aplayer';
-
+    import bus from '@/utils/eventBus.js';
     export default {
         name: "Player",
         components: {
@@ -114,6 +114,9 @@
                 } else {
                     this.pause();
                 }
+            },
+            currentTime(val){
+                bus.$emit('updateTime',val);
             }
         },
         methods: {

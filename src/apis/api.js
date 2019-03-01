@@ -39,4 +39,8 @@ export const getNewSongs=()=>{
   return get(`${BASE_URL}/personalized/newsong`)
 }
 
+export const getLyric=(id)=>{
+  return get(`${BASE_URL}/lyric?id=${id}`)
+}
+
 

@@ -13,7 +13,8 @@
                 <transition name="fade">
                     <player-info v-if="showPlayerInfo" class="player-info"
                                  :img-url="song.album.picUrl"
-                                 :is-play="isPlay"></player-info>
+                                 :is-play="isPlay"
+                                 :id="song.id"></player-info>
                 </transition>
             </keep-alive>
         </div>
