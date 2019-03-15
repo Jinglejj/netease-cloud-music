@@ -40,8 +40,12 @@
       data() {
         return {
           isCollapse: false,
-          defaultActive:''
         };
+      },
+      computed:{
+        defaultActive(){
+          return this.$route.fullPath;
+        }
       },
       methods: {
         handleOpen(key, keyPath) {

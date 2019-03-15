@@ -1,5 +1,5 @@
 <template>
-  <el-card @click="click" class="card" :body-style="{ padding: '0px' }">
+  <el-card @click="click" class="card big-animation" :body-style="{ padding: '0px' }">
     <div v-if="square" class="square">
       <img class="image" :src="picUrl" alt="">
     </div>
@@ -42,10 +42,15 @@
     margin: 10px 0 1px;
   }
 
+
   .card .image {
     width: calc(100% - 2px);
     border: 1px solid #E4E7ED;
     cursor: pointer;
+  }
+
+  .card .image:hover {
+    filter: brightness(115%);
   }
 
   .square{
@@ -62,10 +67,6 @@
     position: absolute;
   }
 
-
-  .card .image:hover {
-    opacity: 0.7;
-  }
 
   .ellipsis {
     width: 90%;

@@ -1,7 +1,7 @@
 .fade-transform-leave-active,
-.fade-transform-enter-active {
-  transition: all .3s;
-}
+ .fade-transform-enter-active {
+   transition: all .3s;
+ }
 .fade-transform-enter {
   opacity: 0;
   transform: translateX(-30px);
@@ -9,6 +9,11 @@
 .fade-transform-leave-to {
   opacity: 0;
   transform: translateX(30px);
+}
+
+.big-animation:hover{
+  transform: scale(1.03,1.03);
+  transition: all .3s;
 }
 
 
