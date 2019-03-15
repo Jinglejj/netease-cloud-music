@@ -3,7 +3,7 @@
         <div class="main-container">
             <div class="aside">
                 <keep-alive>
-                    <Aside></Aside>
+                    <Aside style="height: 100%;"></Aside>
                 </keep-alive>
             </div>
             <div class="app-main">

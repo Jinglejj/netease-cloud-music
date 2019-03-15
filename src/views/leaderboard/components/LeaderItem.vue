@@ -2,7 +2,7 @@
     <div class="leader-item-container">
         <div class="img-container">
             <img :src="imgUrl" class="image">
-            <div class="time">{{124}}</div>
+            <div class="time">{{updateFrequency}}</div>
         </div>
         <div style="flex: 1;overflow: hidden;height: 100%">
             <div v-for="(item,index) in tracks"
@@ -24,6 +24,9 @@
             tracks: {
                 type: Array,
                 default: () => []
+            },
+            updateFrequency:{
+                type:String
             }
         }
     }

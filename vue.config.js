@@ -57,16 +57,6 @@ module.exports = {
             warnings: false,
             errors: false
         },
-        proxy:{
-          '/img':{
-              target:'https://p1.music.126.net/',
-              changeOrigin: true,
-              ws: true,
-              pathRewrite: {
-                  '^/img': ''
-              }
-          }
-        },
         // 提供在服务器内部的其他中间件之前执行自定义中间件的能力
         before: app => {
             // `app` 是一个 express 实例

@@ -63,8 +63,8 @@
 
 <style>
     .dplayer {
-        width: 90%;
-        height: 400px;
+        width: 70%;
+        height: 500px;
         margin: auto;
     }
     .content{
