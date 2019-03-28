@@ -1,14 +1,10 @@
 <template>
     <div class="container">
         <div class="main-container">
-            <div class="aside">
-                <keep-alive>
-                    <Aside style="height: 100%;"></Aside>
-                </keep-alive>
-            </div>
-            <div class="app-main">
-                <app-main></app-main>
-            </div>
+            <keep-alive>
+                <Aside style="height: 100%;" class="aside"></Aside>
+            </keep-alive>
+            <app-main class="app-main"></app-main>
             <keep-alive>
                 <transition name="fade">
                     <player-info v-if="showPlayerInfo" class="player-info"
@@ -98,16 +94,20 @@
         height: calc(100% - 76px);
         z-index: 99;
     }
+
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .3s, width .3s ,height .3s;
+        transition: opacity .3s, width .3s, height .3s;
     }
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+    {
         opacity: 0;
-        width:66px;
+        width: 66px;
         height: 66px;
         bottom: 76px;
     }
-    .fade-enter-to{
+
+    .fade-enter-to {
         bottom: 76px;
     }
 </style>

@@ -42,7 +42,7 @@
         <el-row :gutter="10" slot="content" type="flex" justify="space-between" style="flex-wrap:wrap;">
           <el-col v-for="(item,index) in recommendedMv" :key="index" :xs="24" :sm="12" :lg="12">
             <card style="width:100% " :picUrl="item.picUrl" :name="item.copywriter" @click.native="getMvDetail(item.id)"
-                  :artist-name="item.artistName"></card>
+                  :artist-name="item.artistName" ></card>
           </el-col>
         </el-row>
       </div>

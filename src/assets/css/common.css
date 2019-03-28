@@ -11,6 +11,9 @@
   transform: translateX(30px);
 }
 
+
+
+
 .big-animation:hover{
   transform: scale(1.03,1.03);
   transition: all .3s;

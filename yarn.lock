@@ -4689,6 +4689,11 @@ image-size@^0.5.1:
   resolved "http://registry.npm.taobao.org/image-size/download/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
 
+img-2@^0.0.4:
+  version "0.0.4"
+  resolved "http://registry.npm.taobao.org/img-2/download/img-2-0.0.4.tgz#0283748f9fb5a0a9bca20e8d2d29614844131cfd"
+  integrity sha1-AoN0j5+1oKm8og6NLSlhSEQTHP0=
+
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/import-cwd/download/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"

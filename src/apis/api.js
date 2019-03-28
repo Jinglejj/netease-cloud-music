@@ -21,26 +21,26 @@ export const searchSongs=(keyword,type=1,limit=30,offset=0)=>{
 
 export const searchHot=()=>{
   return get(`${BASE_URL}/search/hot?timestamp=${new Date().getTime()}`)
-}
+};
 
 export const searchSuggest=(keywords)=>{
   return get(`${BASE_URL}/search/suggest?keywords=${keywords}&type=mobile&timestamp=${new Date().getTime()}`)
-}
+};
 
 export const getMusicDetail=(id)=>{
   return get(`${BASE_URL}/song/detail/?ids=${id}`)
-}
+};
 
 export const getMusicUrl=(id)=>{
   return get(`${BASE_URL}/song/url?id=${id}`)
-}
+};
 
 export const getNewSongs=()=>{
   return get(`${BASE_URL}/personalized/newsong`)
-}
+};
 
 export const getLyric=(id)=>{
   return get(`${BASE_URL}/lyric?id=${id}`)
-}
+};
 
 

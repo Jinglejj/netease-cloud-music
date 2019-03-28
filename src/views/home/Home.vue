@@ -4,7 +4,7 @@
             <el-menu-item index="recommendation">个性推荐</el-menu-item>
             <el-menu-item index="play-list">歌单</el-menu-item>
             <!--<el-menu-item index="3">主播电台</el-menu-item>-->
-            <el-menu-item index="4">最新音乐</el-menu-item>
+            <el-menu-item index="new-music">最新音乐</el-menu-item>
             <el-menu-item index="artists">歌手</el-menu-item>
         </el-menu>
         <el-scrollbar ref="scroll" style="height: 100%">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import {Recommendation, PlayList, Artists} from "@/views/home/components";
+    import {Recommendation, PlayList, Artists, NewMusic} from "@/views/home/components";
     import scroll from '@/mixins/scroll'
 
     export default {
@@ -29,7 +29,8 @@
         components: {
             Recommendation,
             PlayList,
-            Artists
+            Artists,
+            NewMusic
         },
         props: {
             view: {

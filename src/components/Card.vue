@@ -1,9 +1,9 @@
 <template>
   <el-card @click="click" class="card big-animation" :body-style="{ padding: '0px' }">
     <div v-if="square" class="square">
-      <img class="image" :src="picUrl" alt="">
+      <img class="image" :src="picUrl" :src-preview="picUrl" alt="">
     </div>
-    <img v-else class="image" :src="picUrl" alt="">
+    <img v-else class="image" :src="picUrl"  alt="">
     <div class="ellipsis">{{name}}</div>
     <div v-if="artistName!==''" class="writer">{{artistName}}</div>
   </el-card>

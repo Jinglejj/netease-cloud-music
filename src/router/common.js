@@ -32,5 +32,10 @@ export default [{
       name:'artistDetail',
       component:()=>import('@/views/detail/ArtistDetail/ArtistDetail'),
       props: true,
+    },{
+      path:'boutiqueplaylist',
+      name:'boutiquePlayList',
+      component:()=>import('@/views/boutiqueplaylist/Index'),
+      props: true,
     }]
 },]

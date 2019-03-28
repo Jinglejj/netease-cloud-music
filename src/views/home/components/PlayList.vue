@@ -3,7 +3,7 @@
     <tabs :active-tag="tag" style="margin-bottom: 15px" :tabs-list="hotTags" v-on:changeTag="changeTag"></tabs>
     <el-row :gutter="30" slot="content" type="flex" style="flex-wrap:wrap;">
       <el-col :xs="12" :sm="8" :md="6" :lg="4">
-        <card style="width: 100%" :pic-url="highqualityPlayList.coverImgUrl" name="精品歌单"></card>
+        <card @click.native="$router.push({path:'boutiqueplaylist',name:'boutiquePlayList'})" style="width: 100%" :pic-url="highqualityPlayList.coverImgUrl" name="精品歌单"></card>
       </el-col>
       <el-col v-for="(item,index) in result" :key="index"  :xs="12" :sm="8" :md="6" :lg="4">
         <div @click="getDetail(item.id)">
