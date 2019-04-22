@@ -5,7 +5,11 @@
         </div>
         <el-scrollbar ref="scroll" style="height: 100%">
             <div style="flex: 1">
-                <playlist-item v-for="(item,index) in playlists" :key="index" :play-list="item"></playlist-item>
+                <playlist-item
+                        v-for="(item,index) in playlists"
+                        :key="index"
+                        :play-list="item"
+                        @click.native="$router.push({path:`playListDetail${item.id}`,name:'playListDetail',params:{id:item.id}})"></playlist-item>
             </div>
         </el-scrollbar>
     </div>
@@ -13,11 +17,12 @@
 
 <script>
     import PlaylistItem from './PlaylistItem'
-    import {getHighqualityPlayList,getNextHeightPlayList} from "../../apis/playList";
+    import {getHighqualityPlayList, getNextHeightPlayList} from "../../apis/playList";
     import scroll from '@/mixins/scroll'
+
     export default {
         name: "Index",
-        mixins:[scroll],
+        mixins: [scroll],
         components: {
             PlaylistItem
         },
@@ -31,20 +36,20 @@
             getPlayList() {
                 getHighqualityPlayList(20).then(res => {
                     this.playlists = res.playlists;
-                    this.total=res.total;
+                    this.total = res.total;
                     console.log(res);
                 }).catch(err => {
                     console.log(err);
                 });
             },
-            getNextPage(){
-                if(this.playlists.length===this.total){
+            getNextPage() {
+                if (this.playlists.length === this.total) {
                     return;
                 }
-                getNextHeightPlayList(20,this.playlists[this.playlists.length-1].updateTime).then(res=>{
-                    this.playlists=this.playlists.concat(res.playlists);
+                getNextHeightPlayList(20, this.playlists[this.playlists.length - 1].updateTime).then(res => {
+                    this.playlists = this.playlists.concat(res.playlists);
                     console.log(res);
-                }).catch(err=>{
+                }).catch(err => {
                     console.log(err);
                 });
             }

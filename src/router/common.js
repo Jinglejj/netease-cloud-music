@@ -38,4 +38,8 @@ export default [{
       component:()=>import('@/views/boutiqueplaylist/Index'),
       props: true,
     }]
-},]
+},{
+  path:'/tet',
+  name:'Test',
+  component:()=>import('@/components/comment/index')
+}]

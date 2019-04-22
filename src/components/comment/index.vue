@@ -2,13 +2,15 @@
     <div class="container">
         <img src="" class="image">
         <div class="content">
-            <div style="display: flex">
-                <span class="username">username:<span class="comment-content" style="width: 50px;">你好你好你还哦年后年后年后年后年后鸟你好你好你还哦年后年后年后年后年后鸟你好你好你还哦年后年后年后年后年后鸟</span></span>
+            <div style="display: flex;text-align: left">
+                <span class="username">username:<span class="comment-content" >你好你好你还哦年后年后年后年后年后鸟你好你好你还哦年后年后年后年后年后鸟你好你好你还哦年后年后年后年后年后鸟</span></span>
             </div>
-            <div>
+            <div style="display: flex;justify-content: space-between">
                 <span>2月17日</span>
-                <span>分享</span>
-                <span>回复</span>
+                <div>
+                    <span>分享</span>
+                    <span>回复</span>
+                </div>
             </div>
         </div>
     </div>
@@ -22,7 +24,7 @@
                 require: true
             }
         },
-        name: "CommentItem"
+        name: "index"
     }
 </script>
 
@@ -31,8 +33,8 @@
         display: flex;
         align-items: center;
         padding: 10px 0;
-        border-top: 1px solid red;
-        border-bottom: 1px solid red;
+        border-top: 1px solid #DCDFE6;
+        border-bottom: 1px solid #DCDFE6;
     }
 
     .content {
@@ -50,13 +52,12 @@
 
     .username {
         font-size: 18px;
-        color: blue;
+        color: #409EFF;
     }
 
     .comment-content {
         word-break: normal;
         white-space: pre-wrap;
-        /*word-wrap: break-word;*/
-        text-align: left;
+        color: black;
     }
 </style>

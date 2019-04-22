@@ -4,13 +4,11 @@
                      ref="player" :autoplay="true">
         </vue-dplayer>
         <div class="content">
-            <comment-list style="width:80%"></comment-list>
         </div>
     </div>
 </template>
 
 <script>
-    import CommentList from '@/components/comment/ComentList'
     import VueDplayer from 'vue-dplayer'
     import { getMvDetail} from '@/apis/mv';
 
@@ -18,7 +16,6 @@
         name: 'MVDetail',
         components: {
             VueDplayer,
-            CommentList
         },
         props: {
             id: {

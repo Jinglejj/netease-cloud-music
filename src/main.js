@@ -5,15 +5,16 @@ import store from './store'
 import './icons'
 import './filters/filters'
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
-import './assets/css/common.css'
+import '@/styles/index.scss';
 Vue.use(ElementUI);
 import 'vue-dplayer/dist/vue-dplayer.css';
 import VueAPlayer from 'yujinjiang-vue-aplayer'
 VueAPlayer.disableVersionBadge = true;
 import './utils/rgbaster';
 Vue.config.productionTip = false;
+import waves from './directive/waves/waves'
+Vue.directive('waves', waves);
 
 new Vue({
   router,
