@@ -1,0 +1,14 @@
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/roboto/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#music-container{
+    width: 980px;
+    margin: 32px auto;
+    overflow-x: hidden;
+}
